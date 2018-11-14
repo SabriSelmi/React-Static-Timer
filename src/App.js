@@ -1,28 +1,36 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+
+import React from "react";
+
 import './App.css';
+import Hourtime from "./components/hour";
+import Mintime from "./components/min";
+import Secondetime from "./components/seconde";
+import Chifftime from "./components/hourchiff";
 
-class App extends Component {
-  render() {
+
+class App extends React.Component {
+  render(){
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+      <div className="wrapper">
+        <div className="main">
+          <div className="container card m-0">
+            <div className="row">
+            <div className="col-md-4 title">    <Hourtime/>      </div>
+            <div className="col-md-4 title">    <Mintime/>      </div>
+            <div className="col-md-4 title">    <Secondetime/>      </div>
+            </div>
+            <Chifftime/>
+          </div>
+          
       </div>
-    );
-  }
-}
+      </div>
+       
+      </div>
+    )
 
+  }
+};
+
+        
 export default App;
