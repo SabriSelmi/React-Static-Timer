@@ -1,8 +1,8 @@
 import React from "react";
 
-class Secondetime extends React.Component{
-    render(){
-        return (<div>00 </div>)
+
+    const Secondetime=({aff})=>{
+        return (<div>{aff.seconde<9? '0'+aff.seconde+':' : aff.seconde}</div>)
     }
-}
+
 export default Secondetime;

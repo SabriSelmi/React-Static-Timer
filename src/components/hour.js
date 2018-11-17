@@ -1,8 +1,6 @@
 import React from "react";
 
-class Hourtime extends React.Component{
-    render(){
-        return (<div>00 <span>:</span></div>)
-    }
+const Hourtime=({aff})=>{
+    return (<div>{aff.hour<9? '0'+aff.hour+':' : aff.hour+':'}</div>)
 }
 export default Hourtime;

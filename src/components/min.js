@@ -1,8 +1,6 @@
 import React from "react";
 
-class Mintime extends React.Component{
-    render(){
-        return (<div>30 <span>:</span></div>)
-    }
+const Mintime =({aff})=>{
+    return (<div>{aff.minute<9? '0'+aff.minute+':' : aff.minute+':'}</div>)
 }
 export default Mintime;

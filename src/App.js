@@ -1,36 +1,46 @@
 
 import React from "react";
 
+
 import './App.css';
 import Hourtime from "./components/hour";
 import Mintime from "./components/min";
 import Secondetime from "./components/seconde";
 import Chifftime from "./components/hourchiff";
-
+import Boutons from "./components/bouton/bouton";
+const time=10000000
+const convert={
+  hour: parseInt(time/3600000),
+  minute: parseInt(time/60000)-parseInt(time/3600000)*60,
+  seconde: parseInt(time/1000)-parseInt(time/60000)*60
+}
 
 class App extends React.Component {
   render(){
     return (
-      <div>
-      <div className="wrapper">
-        <div className="main">
-          <div className="container card m-0">
-            <div className="row">
-            <div className="col-md-4 title">    <Hourtime/>      </div>
-            <div className="col-md-4 title">    <Mintime/>      </div>
-            <div className="col-md-4 title">    <Secondetime/>      </div>
+      <div className="card bg-dark">
+      <div className="contain">
+            <div className="contenu">
+                <Hourtime aff={convert} />      
+                <Mintime aff={convert}/>      
+                <Secondetime aff={convert}/>      
             </div>
+            
             <Chifftime/>
-          </div>
+            </div>
+        <Boutons/>
           
-      </div>
-      </div>
+     
+      
        
       </div>
     )
 
-  }
+      
+     
 };
+}
+
+export default App;
 
         
-export default App;
